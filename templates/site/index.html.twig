@@ -1,5 +1,22 @@
 {% extends 'layout.html.twig' %}
 
+{% block javascripts %}
+    <script type="text/javascript">
+        var CENTRIFUGE_URL = '{{ centrifuge_url }}';
+        var CENTRIFUGE_USER = '';
+        var CENTRIFUGE_TIMESTAMP = '{{ timestamp }}';
+        var CENTRIFUGE_TOKEN = '{{ token }}';
+    </script>
+    {{ parent() }}
+    <script type="text/javascript" src="/js/centrifuge.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+{% endblock %}
+
 {% block content %}
-    <h1>Hello world!</h1>
+    <h1>{{ app.request.session.get('username') }}</h1>
+    <div id="chat"></div>
+    <div>
+        <textarea id="message"></textarea>
+        <button id="send" type="button">Send</button>
+    </div>
 {% endblock %}

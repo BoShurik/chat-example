@@ -23,6 +23,9 @@
     "doctrine/lexer": {
         "version": "v1.0.1"
     },
+    "oleh-ozimok/php-centrifugo": {
+        "version": "v2.0.0"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
